@@ -10,6 +10,10 @@
   margin: 0;
 } */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: "Nunito sans", sans-serif !important;
   overflow-x: hidden;
