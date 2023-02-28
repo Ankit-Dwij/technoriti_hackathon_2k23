@@ -1,4 +1,5 @@
 import React from "react";
+
 export const categories = [
   {
     id: 1,
@@ -87,7 +88,6 @@ const Category = () => {
       <h1 className="text-orange-600 font-bold text-4xl text-center ">
         Explore Events by Interests
       </h1>
-      {/* categories */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-6 ">
         {categories.map((item, index) => {
           return <CategoryCard key={index} props={item} />;

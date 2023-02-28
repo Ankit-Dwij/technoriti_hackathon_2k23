@@ -1,7 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  const user = false;
+
   return (
     <>
       <div className="navbar-container lr-pad-d lr-pad-m f-d f-v-c f-h-sb">
@@ -20,10 +24,28 @@ const Header = () => {
         </div>
 
         <div className="right-nav-container f-d f-v-c hide-m">
-          <div className="nav-btn-orange nav-item c-pointer">Sign Up</div>
-          <div className="nav-btn-orange-outline nav-item c-pointer">
-            Log In
-          </div>
+          {!user ? (
+            <>
+              <div
+                className="nav-btn-orange nav-item c-pointer "
+                onClick={() => {
+                  router.push("/signUp");
+                }}
+              >
+                Sign Up
+              </div>
+              <div
+                className="nav-btn-orange-outline nav-item c-pointer"
+                onClick={() => {
+                  router.push("/signIn");
+                }}
+              >
+                Log In
+              </div>
+            </>
+          ) : (
+            <span>Hey ! Ankit</span>
+          )}
         </div>
       </div>
       <style jsx>{`
