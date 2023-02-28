@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 let event = {
   imageUrl: "https://www.surfertoday.com/images/stories/hawaiiisland.jpg",
@@ -7,9 +8,15 @@ let event = {
   title: "Technoriti 2k23",
   description:
     "In this example, we’ll create and add three images with different sources, one will be imported from the public directory, the second image will be served through the static path from the public directory and the other one will be served from an external URL",
+  eventId: "kjsvbskfvb",
 };
 
 const EventCard = () => {
+  const router = useRouter();
+
+  const redirectTo = (id) => {
+    router.push(`/events/${id}`);
+  };
   return (
     <div>
       {" "}
@@ -47,7 +54,7 @@ const EventCard = () => {
             <button
               onClick={() => {
                 redirectTo(event.eventId);
-                setButtonLoading(true);
+                // setButtonLoading(true);
               }}
               className="bg-[#F54848] hover:bg-[#cf2b2b] text-white px-5 py-[5px] rounded-xl font-medium w-fit mb-6"
             >
