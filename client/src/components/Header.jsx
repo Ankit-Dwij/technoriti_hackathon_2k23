@@ -2,12 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import Link from "next/link";
-import signUp from "../pages/signUp";
-import signIn from "../pages/signIn";
 const Header = () => {
   const router = useRouter();
-  const user = false;
+  const user = true;
 
   return (
     <>

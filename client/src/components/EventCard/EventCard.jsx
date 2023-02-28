@@ -8,10 +8,10 @@ let event = {
   title: "Technoriti 2k23",
   description:
     "In this example, we’ll create and add three images with different sources, one will be imported from the public directory, the second image will be served through the static path from the public directory and the other one will be served from an external URL",
-  eventId: "kabdvhabd",
+  eventId: "kjsvbskfvb",
 };
 
-const EventCard = ({ src, alt }) => {
+const EventCard = () => {
   const router = useRouter();
 
   const redirectTo = (id) => {
@@ -22,8 +22,8 @@ const EventCard = ({ src, alt }) => {
       {" "}
       <div className="w-[450px] bg-white text-[#333333] shadow-[4px_4px_10px_0px_rgba(94,94,94,0.20)] rounded-[20px] ring-[3px] ring-[#DBDBDB]">
         <div className="relative w-full h-56">
-          <img
-            src={src.src}
+          <Image
+            src={event.imageUrl}
             objectFit="cover"
             alt="Event Image"
             layout="fill"
@@ -54,6 +54,7 @@ const EventCard = ({ src, alt }) => {
             <button
               onClick={() => {
                 redirectTo(event.eventId);
+                // setButtonLoading(true);
               }}
               className="bg-[#F54848] hover:bg-[#cf2b2b] text-white px-5 py-[5px] rounded-xl font-medium w-fit mb-6"
             >
