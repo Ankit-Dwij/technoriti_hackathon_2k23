@@ -54,12 +54,12 @@ const Featured = () => {
   ];
   return (
     <>
-      <div className="">
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" >
+      <div className="gap-6">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" >
   {imageDatabase.map((image) => (
-    <li key={image.id}>
+    <li key={image.id} >
   
-      <EventCard  className ="flex flex-row"src={image.src} alt={image.alt} />
+      <EventCard  className ="gap-6" src={image.src} alt={image.alt} />
       
     </li>
   ))}
