@@ -1,10 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Header = () => {
   const router = useRouter();
-  const user = true;
+  const { user, dispatch } = useAuthContext();
+  console.log("user", user);
+
+  // const user = false;
 
   return (
     <>
@@ -44,7 +48,25 @@ const Header = () => {
               </div>
             </>
           ) : (
-            <span>Hey ! Ankit</span>
+            <>
+              <span>
+                Hey!{" "}
+                <span className="text-lg text-orange-600 font-semibold">
+                  {user.user.username}
+                </span>
+              </span>
+              <div
+                className="nav-btn-orange-outline nav-item c-pointer"
+                onClick={() => {
+                  dispatch({
+                    type: "LOGOUT",
+                  });
+                  localStorage.clear();
+                }}
+              >
+                Log Out
+              </div>
+            </>
           )}
         </div>
       </div>

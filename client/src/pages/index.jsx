@@ -65,7 +65,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.PUBLIC_URL}/event/allEvents`)
+      .get(`${process.env.SERVER_URL}/api/event/allEvents`)
       .then((response) => {
         const data = response.data;
         if (data) {

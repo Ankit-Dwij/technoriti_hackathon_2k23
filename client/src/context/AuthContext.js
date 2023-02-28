@@ -1,6 +1,6 @@
 import { useEffect, createContext, useReducer } from "react";
 
-export const UserContext = createContext();
+export const AuthContext = createContext();
 
 export const loginReducer = (state, action) => {
   switch (action.type) {
@@ -13,7 +13,7 @@ export const loginReducer = (state, action) => {
   }
 };
 
-export const UserContextProvider = ({ children }) => {
+export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(loginReducer, { user: null });
 
   //check if user is already present in LS
@@ -24,11 +24,11 @@ export const UserContextProvider = ({ children }) => {
     }
   }, []);
 
-  console.log(`UserContext State : `, state);
+  console.log(`AuthContext State : `, state);
 
   return (
-    <UserContext.Provider value={{ ...state, dispatch }}>
+    <AuthContext.Provider value={{ ...state, dispatch }}>
       {children}
-    </UserContext.Provider>
+    </AuthContext.Provider>
   );
 };
