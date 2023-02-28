@@ -11,7 +11,7 @@ let event = {
   eventId: "kabdvhabd",
 };
 
-const EventCard = () => {
+const EventCard = ({ src, alt }) => {
   const router = useRouter();
 
   const redirectTo = (id) => {
@@ -22,8 +22,8 @@ const EventCard = () => {
       {" "}
       <div className="w-[450px] bg-white text-[#333333] shadow-[4px_4px_10px_0px_rgba(94,94,94,0.20)] rounded-[20px] ring-[3px] ring-[#DBDBDB]">
         <div className="relative w-full h-56">
-          <Image
-            src={event.imageUrl}
+          <img
+            src={src.src}
             objectFit="cover"
             alt="Event Image"
             layout="fill"
