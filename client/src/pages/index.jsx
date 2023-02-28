@@ -4,7 +4,8 @@ import Layout from "../components/Layout";
 import EventCard from "../components/EventCard/EventCard";
 import Featured from "../components/Home/Featured";
 import Category from "./../components/Home/Categories";
-import EventsCarousal from "../components/Home/EventsCarousal";
+import Carousel from "./../components/Home/EventsCarousal";
+
 
 let content = {
   cards: [
@@ -61,7 +62,8 @@ export default function Home() {
     <>
       <Layout>
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        {/* <EventsCarousal content={content} /> */}
+         {/* <EventsCarousal content={content} />  */}
+        <Carousel/>
         <Featured />
         <Category />
       </Layout>

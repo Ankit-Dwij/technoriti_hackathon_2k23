@@ -16,6 +16,7 @@ const EventCard = ({src,alt}) => {
       <div className="w-[450px] bg-white text-[#333333] shadow-[4px_4px_10px_0px_rgba(94,94,94,0.20)] rounded-[20px] ring-[3px] ring-[#DBDBDB] overflow-hidden">
         <div className="relative w-full h-30 gap-x-6">
           <img
+            
             src={src.src}
             objectFit="cover"
             alt="Event Image"
