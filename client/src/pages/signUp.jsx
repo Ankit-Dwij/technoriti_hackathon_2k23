@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Login() {
@@ -68,9 +69,9 @@ export default function Login() {
         <p className="mt-8 text-xs font-light text-center text-gray-700">
           
           Already have an account?
-          <a href="/signIn" className="font-medium text-red-600 hover:underline">
+          <Link href="/signIn" className="font-medium text-red-600 hover:underline">
             Sign in
-          </a>
+          </Link>
         </p>
       </div>
     </div>

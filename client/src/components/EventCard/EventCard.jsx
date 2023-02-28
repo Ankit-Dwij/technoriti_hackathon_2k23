@@ -9,14 +9,14 @@ let event = {
     "In this example, we’ll create and add three images with different sources, one will be imported from the public directory, the second image will be served through the static path from the public directory and the other one will be served from an external URL",
 };
 
-const EventCard = () => {
+const EventCard = ({src,alt}) => {
   return (
     <div>
       {" "}
       <div className="w-[450px] bg-white text-[#333333] shadow-[4px_4px_10px_0px_rgba(94,94,94,0.20)] rounded-[20px] ring-[3px] ring-[#DBDBDB]">
         <div className="relative w-full h-56">
-          <Image
-            src={event.imageUrl}
+          <img
+            src={src.src}
             objectFit="cover"
             alt="Event Image"
             layout="fill"
