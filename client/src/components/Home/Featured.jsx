@@ -54,8 +54,8 @@ const Featured = () => {
   ];
   return (
     <>
-      <div className="tb-pad-d lr-pad-d sm:grid xl:grid-cols-3 flex flex-col md:grid-cols-2 gap-12 w-full">
-      <ul>
+      <div className="">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" >
   {imageDatabase.map((image) => (
     <li key={image.id}>
   

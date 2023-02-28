@@ -39,7 +39,7 @@ console.log("Error",error);
           <div className="mb-2">
             <label
               for="email"
-              className="block text-sm font-semibold text-gray-800"
+              className="block text-xs  font-semibold text-gray-800"
             >
               Email
             </label>
@@ -53,7 +53,7 @@ console.log("Error",error);
           <div className="mb-2">
             <label
               for="password"
-              className="block text-sm font-semibold text-gray-800"
+              className="block text-xs font-semibold text-gray-800"
             >
               Password
             </label>
