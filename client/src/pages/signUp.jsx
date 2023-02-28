@@ -68,7 +68,7 @@ export default function Login() {
         <p className="mt-8 text-xs font-light text-center text-gray-700">
           
           Already have an account?
-          <a href="#" className="font-medium text-red-600 hover:underline">
+          <a href="/signIn" className="font-medium text-red-600 hover:underline">
             Sign in
           </a>
         </p>

@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
-
+import Link from "next/link";
+import signUp from '../pages/signUp'
+import signIn from '../pages/signIn'
 const Header = () => {
   return (
     <>
@@ -20,9 +22,11 @@ const Header = () => {
         </div>
 
         <div className="right-nav-container f-d f-v-c hide-m">
-          <div className="nav-btn-orange nav-item c-pointer">Sign Up</div>
+          <div className="nav-btn-orange nav-item c-pointer">
+            <Link href="/signUp">Sign Up</Link>
+          </div>
           <div className="nav-btn-orange-outline nav-item c-pointer">
-            Log In
+          <Link href="/signIn">Log In</Link>
           </div>
         </div>
       </div>

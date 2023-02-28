@@ -4,6 +4,7 @@ import Layout from "./../components/Layout";
 import EventCard from "./../components/EventCard/EventCard";
 import Featured from "./../components/Home/Featured";
 
+
 export default function Home() {
   return (
     <>

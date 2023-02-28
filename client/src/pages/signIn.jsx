@@ -1,11 +1,16 @@
 import React,{useState} from "react";
 import axios from "axios";
+import { useRouter } from 'next/router';
 
 
 export default function Login() {
 const [email,setEmail]=useState();
 const [password,setPassword]=useState();
+const router = useRouter();
 
+function handleClick() {
+  router.push('/signUp');
+}
 const handleSubmit = async (e)=>{
   e.preventDefault();
   const userData ={
@@ -77,7 +82,7 @@ console.log("Error",error);
         <p className="mt-8 text-xs font-light text-center text-gray-700">
           {" "}
           Don't have an account?{" "}
-          <a href="#" className="font-medium text-red-600 hover:underline">
+          <a href="/signUp" className="font-medium text-red-600 hover:underline">
             Sign up
           </a>
         </p>
