@@ -21,7 +21,9 @@ const Header = () => {
             width="130"
             height="40"
           /> */}
-          <h1 className="b-logo">EVENTO</h1>
+          <a href="/">
+            <h1 className="b-logo">EVENTO</h1>
+          </a>
           <span className="nav-item">Browse</span>
           <span className="nav-item">Events</span>
           <span className="nav-item">Register</span>

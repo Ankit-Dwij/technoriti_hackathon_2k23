@@ -2,16 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-let event = {
-  imageUrl: "https://www.surfertoday.com/images/stories/hawaiiisland.jpg",
-  eventDate: new Date(),
-  title: "Technoriti 2k23",
-  description:
-    "In this example, we’ll create and add three images with different sources, one will be imported from the public directory, the second image will be served through the static path from the public directory and the other one will be served from an external URL",
-  eventId: "kjsvbskfvb",
-};
-
-const EventCard = () => {
+const EventCard = ({ props }) => {
+  console.log(props);
   const router = useRouter();
 
   const redirectTo = (id) => {
@@ -23,7 +15,7 @@ const EventCard = () => {
       <div className="w-[450px] bg-white text-[#333333] shadow-[4px_4px_10px_0px_rgba(94,94,94,0.20)] rounded-[20px] ring-[3px] ring-[#DBDBDB]">
         <div className="relative w-full h-56">
           <Image
-            src={event.imageUrl}
+            src={props.img}
             objectFit="cover"
             alt="Event Image"
             layout="fill"
@@ -35,25 +27,27 @@ const EventCard = () => {
         <div className="flex my-5 h-[153px]">
           <div className="px-7 flex flex-col justify-center items-center w-fit pb-6">
             <h3 className="text-xl font-medium">
-              {new Date(event.eventDate).toDateString().slice(4, 8)}
+              {new Date(props.eventDate).toDateString().slice(4, 8)}
             </h3>
             <h1 className="text-[#F54848] text-[32px] font-semibold">
-              {new Date(event.eventDate).toDateString().slice(8, 10)}
+              {new Date(props.eventDate).toDateString().slice(8, 10)}
             </h1>
           </div>
           <div className="flex flex-col font-qs pr-5 overflow-hidden">
             <h3
-              title={event.title}
+              title={props.title}
               className="text-lg font-medium text-ellipsis whitespace-nowrap overflow-hidden w-full"
             >
-              {event.title}
+              {props.title}
             </h3>
             <div className="flex-1">
-              <p className="text-sm giveMeEllipsis">{event.description}</p>
+              <p className="text-sm giveMeEllipsis">
+                {props.desc.slice(0, 150)}
+              </p>
             </div>
             <button
               onClick={() => {
-                redirectTo(event.eventId);
+                redirectTo(props.eventId);
                 // setButtonLoading(true);
               }}
               className="bg-[#F54848] hover:bg-[#cf2b2b] text-white px-5 py-[5px] rounded-xl font-medium w-fit mb-6"

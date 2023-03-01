@@ -9,45 +9,44 @@ export const categories = [
   },
   {
     id: 2,
-    name: "Musical",
+    name: "MUSICAL",
     image:
-      "https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/Pizza_BrowseHome@3x.png",
+      "https://images.unsplash.com/photo-1613093335399-829e30811789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   },
   {
     id: 3,
-    name: "Wings",
+    name: "SPORTS",
     image:
-      "https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/Wings_BrowseHome@3x.png",
+      "https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/1078B/production/_92676476_reds.jpg",
   },
   {
     id: 4,
-    name: "Indian",
+    name: "ADVENTURE",
     image:
-      "https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/Indian_BrowseHome@3x.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8pQ8A2BrnYw4zCeeDAwOgsvFGSkS0xI0BruBvXIO1DJ9lSHRtMg4lEtZMknN6BsumKUs&usqp=CAU",
   },
   {
     id: 5,
-    name: "Latest Deals",
-    image:
-      "https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/Deals_BrowseHome@3x.png",
+    name: "TECHFEST",
+    image: "https://i.ytimg.com/vi/k0fOIdNtFFw/maxresdefault.jpg",
   },
   {
     id: 6,
-    name: "Restaurant Rewards",
+    name: "WORKSHOPS",
     image:
-      "https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/RestoRewards_BrowseHome@3x.png",
+      "https://image.cnbcfm.com/api/v1/image/106276827-1575412281122gettyimages-603706227.jpg?v=1575412404",
   },
   {
     id: 7,
-    name: "Best Overall",
+    name: "COMEDY",
     image:
-      "https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/TopEats_Browse%20Home@3x.png",
+      "https://lh3.googleusercontent.com/p/AF1QipNmU9wivrmdYj7vOgMlljU9Ppnwrol30gBxZgKk=w768-h768-n-o-v1",
   },
   {
     id: 8,
-    name: "Shipped Free",
+    name: "READING",
     image:
-      "https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/Placeholder_Plates@3x.png",
+      "https://media.wired.com/photos/5955c3573ff99d6b3a1d165c/3:2/w_1280%2Cc_limit/books.jpg",
   },
 ];
 
@@ -55,7 +54,7 @@ const CategoryCard = ({ props }) => {
   return (
     <>
       <div className="card-contnr bg-gray-200 rounded-xl w-[310px] h-[330px] flex  justify-center items-top">
-        <span className="card-txt font-bold text-yellow-600 sm:text-xl ">
+        <span className="card-txt font-bold text-emerald-500 sm:text-xl ">
           {props.name}
         </span>
         <img src={props.image} className="card-bg-image rounded-xl" />
