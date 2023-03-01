@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Layout>
         <br />
-        {/* <EventsCarousal /> */}
+        <EventsCarousal />
         <Featured />
         <Category />
       </Layout>
