@@ -1,11 +1,29 @@
-import { Toast } from "flowbite-react";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Layout from "../../components/Layout";
+import { Rating } from "react-simple-star-rating";
+import { Icon } from "antd";
 
 const Event = ({ eventData }) => {
   const [ratio, setRatio] = useState(16 / 9);
+  const [rating, setRating] = useState(eventData.rating);
+
+  useEffect(() => {
+    setRating(eventData.rating);
+  }, [rating]);
+
+  const shareWithTwitter = () => {
+    const textStr = `Checkout my ticket for ${eventData.title} at `;
+    const encodedText = encodeURI(textStr);
+    const encodedUrl = encodeURI(window.location.href);
+    const twitterLink = `http://twitter.com/share?text=${encodedText}&url=${encodedUrl}`;
+    window.open(twitterLink, "_blank");
+  };
+
+  const handleRating = (rate) => {
+    setRating(rate);
+  };
 
   const handleClick = () => {
     toast.error("Feature development in progress!");
@@ -19,7 +37,7 @@ const Event = ({ eventData }) => {
           {/* <div className="left-contnr w-50 "> */}
           <div className="flex flex-col justify-center items-center mt-4">
             <div className="w-full">
-              <div className="md:flex hidden justify-center">
+              <div className="md:flex hidden items-center justify-center">
                 <Image
                   src={eventData.img || ""}
                   alt="event-image"
@@ -44,6 +62,20 @@ const Event = ({ eventData }) => {
               <span className="relative bottom-[150px] text-lg">
                 {eventData.genre.toUpperCase()}
               </span>
+              <div className="rating-comp relative bottom-[150px] text-lg">
+                <Rating
+                  onClick={handleRating}
+                  ratingValue={rating}
+                  initialValue={rating}
+                  size={30}
+                  label
+                  transition
+                  fillColor="orange"
+                  emptyColor="gray"
+                  className="foo" // Will remove the inline style if applied
+                />
+                {`   ${rating}`}
+              </div>
             </div>
           </div>
           {/* </div> */}
@@ -79,11 +111,20 @@ const Event = ({ eventData }) => {
                 </h2>
               </div>
             </div>
-            <div
-              className="relative bottom-[100px] mx-5 nav-btn-orange nav-item c-pointer"
-              onClick={handleClick}
-            >
-              Buy now
+            <div className="">
+              <div
+                className="m-5 relative bottom-[100px] mx-5 nav-btn-orange nav-item c-pointer"
+                onClick={handleClick}
+              >
+                Book
+              </div>
+              <div
+                className="m-5 relative bottom-[100px] mx-5 nav-btn-orange nav-item c-pointer"
+                onClick={shareWithTwitter}
+              >
+                <Icon type="share-alt" className="pr-2" />
+                Share
+              </div>
             </div>
           </div>
           {/* </div> */}
@@ -109,6 +150,9 @@ const Event = ({ eventData }) => {
           font-size: 16px;
           line-height: 24px;
           color: white;
+        }
+        .star-svg {
+          display: inline;
         }
       `}</style>
     </>

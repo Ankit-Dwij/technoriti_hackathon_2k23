@@ -23,10 +23,13 @@ const Featured = () => {
 
   return (
     <>
-      <div className="tb-pad-d lr-pad-d sm:grid xl:grid-cols-3 flex flex-col md:grid-cols-2 gap-12 w-full">
-        {content.map((data) => {
-          return <EventCard props={data} />;
-        })}
+      <div f-vt className="f-d f-h-c f-vt f-v-c tb-pad-d lr-pad-d">
+        <div className="pb-7 text-5xl font-semibold">Trending Events</div>
+        <div className=" sm:grid xl:grid-cols-3 flex flex-col md:grid-cols-2 gap-12 w-full">
+          {content.map((data) => {
+            return <EventCard props={data} />;
+          })}
+        </div>
       </div>
     </>
   );
